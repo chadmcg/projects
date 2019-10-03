@@ -1,0 +1,4 @@
+com\mycompany\vendingmachine\dao\VendingMachineDaoTest.class
+com\mycompany\vendingmachine\dao\VendingMachineAlwaysFailsDao.class
+com\mycompany\vendingmachine\service\VendingMachineServiceLayerTest.class
+com\mycompany\vendingmachine\dao\VendingMachineInMemDao.class

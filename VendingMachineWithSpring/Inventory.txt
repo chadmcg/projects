@@ -1,0 +1,10 @@
+1,Doritos,0,1.25
+2,Wrigley's Gum,0,0.75
+3,Milky Way,1,1.00
+4,Trail Mix,2,1.75
+5,Animal Crackers,2,1.25
+6,Twizzlers,2,1.50
+7,Pita Chips,2,2.00
+8,Pretzels,0,1.00
+9,Lifesavers,0,0.75
+10,Granola Bar,0,2.25
