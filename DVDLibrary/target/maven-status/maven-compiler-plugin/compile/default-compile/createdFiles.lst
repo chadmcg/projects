@@ -1,0 +1,9 @@
+com\mycompany\movielibrary\dao\MovieLibraryDao.class
+com\mycompany\movielibrary\controller\MovieLibraryController.class
+com\mycompany\movielibrary\dao\MovieLibraryDaoException.class
+com\mycompany\movielibrary\App.class
+com\mycompany\movielibrary\ui\UserIOConsoleImpl.class
+com\mycompany\movielibrary\ui\UserIO.class
+com\mycompany\movielibrary\dao\MovieLibraryDaoFileImpl.class
+com\mycompany\movielibrary\dto\Movie.class
+com\mycompany\movielibrary\ui\MovieLibraryView.class
