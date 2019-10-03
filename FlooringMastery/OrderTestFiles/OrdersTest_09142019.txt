@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,TEST NAME,MN,8.25,TEST-PROD1,100.00,3.50,4.50,350.00,450.00,66.00,866.00

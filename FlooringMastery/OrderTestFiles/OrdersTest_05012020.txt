@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+2,TEST FILE 5 NAME 2,MN,8.25,CARPET,300.00,5.15,7.75,1545.00,2325.00,319.28,4189.28

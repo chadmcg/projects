@@ -1,0 +1,9 @@
+com\mycompany\flooringmastery\daos\InMemTaxesDao.class
+com\mycompany\flooringmastery\service\ServiceTest.class
+com\mycompany\flooringmastery\daos\InMemProductsDao.class
+com\mycompany\flooringmastery\daos\InMemNoOrdersDao.class
+com\mycompany\flooringmastery\daos\AlwaysFailsDao.class
+com\mycompany\flooringmastery\daos\TaxesDaoTest.class
+com\mycompany\flooringmastery\daos\InMemOrderDao.class
+com\mycompany\flooringmastery\daos\ProductsDaoTest.class
+com\mycompany\flooringmastery\daos\OrderDaoTest.class

@@ -1,0 +1,6 @@
+State,TaxRate
+OH,7.25
+PA,7.75
+MI,8.00
+IN,8.25
+MN,8.50

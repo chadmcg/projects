@@ -1,0 +1,7 @@
+ProductType,CostPerSquareFoot,LaborCostPerSquareFoot
+Test Prod 1,1.25,1.10
+Test Prod 2,2.25,2.10
+Test Prod 3,3.25,3.10
+Test Prod 4,4.25,4.10
+Test Prod 5,5.25,5.10
+Test Prod 6,6.25,6.10

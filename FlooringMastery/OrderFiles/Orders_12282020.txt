@@ -1,0 +1,4 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,ADDTEST,OH,5.00,CARPET,100,3.25,3.10,325.00,310.00,31.75,666.75
+2,ADD2,PA,10.00,CARPET,200,3.25,3.10,650.00,620.00,127.00,1397.00
+3,ADD3,MI,15.00,WOOD,300,6.15,6.75,1845.00,2025.00,580.50,4450.50
