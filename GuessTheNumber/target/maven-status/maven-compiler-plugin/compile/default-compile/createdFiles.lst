@@ -1,0 +1,15 @@
+com\mycompany\guessthenumber\latest\controller\Controller.class
+com\mycompany\guessthenumber\latest\service\Service.class
+com\mycompany\guessthenumber\latest\dao\DaoDatabaseImpl$RoundMapper.class
+com\mycompany\guessthenumber\latest\dao\DaoDatabaseImpl$GameMapper.class
+com\mycompany\guessthenumber\latest\dao\DaoException.class
+com\mycompany\guessthenumber\latest\controller\Error.class
+com\mycompany\guessthenumber\latest\dao\DaoDatabaseImpl.class
+com\mycompany\guessthenumber\latest\models\Game.class
+com\mycompany\guessthenumber\latest\models\Round.class
+com\mycompany\guessthenumber\latest\service\InvalidGuessException.class
+com\mycompany\guessthenumber\latest\dao\Dao.class
+com\mycompany\guessthenumber\latest\TestApplicationConfiguration.class
+com\mycompany\guessthenumber\latest\controller\ControllerExceptionHandler.class
+com\mycompany\guessthenumber\latest\service\GameNotFoundException.class
+com\mycompany\guessthenumber\latest\App.class

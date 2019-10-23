@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vending Machine</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="home.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 align="center">Vending Machine</h1>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-8" id="group1">
+
+            </div>
+
+            <div class="col-md-4" id="forms">
+
+                <form class="form-horizontal" role="form" id="add-money-form">
+                    <div class="form-group">
+                        <label for="money-input" class="col-md-12 col-form-label text-center">
+                            Total $ In
+                        </label>
+
+                        <div class="col-md-offset-3 col-md-6">
+                            <input type="number" class="form-control" id="money-input" placeholder="0.00" readonly />
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+
+                        <div class="col-md-6">
+                            <button type="button" id="add-dollar-button" class="btn btn-default">
+                                Add Dollar
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" id="add-quarter-button" class="btn btn-default">
+                                Add Quarter
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="btn-group">
+
+                        <div class="col-md-6">
+                            <button type="button" id="add-dime-button" class="btn btn-default">
+                                Add Dime
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" id="add-nickel-button" class="btn btn-default">
+                                Add Nickel
+                            </button>
+                        </div>
+
+                    </div>
+
+                </form>
+                <hr />
+                <form class="form-horizontal" role="form" id="messages-form">
+                    <div class="form-group">
+                        <label for="messages-input" class="col-md-12 col-form-label text-center">
+                            Messages
+                        </label>
+
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" id="messages-input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-input" class="col-md-4 col-form-label text-right">
+                            Item:
+                        </label>
+
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="item-input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-8">
+                            <button type="button" id="make-purchase-button" class="btn btn-default btn-block">
+                                Make Purchase
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+                <hr />
+
+                <form class="form-horizontal" role="form" id="change-form">
+                    <div class="form-group">
+                        <label for="change-input" class="col-md-12 col-form-label text-center">
+                            Change
+                        </label>
+
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" id="change-input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-8">
+                            <button type="button" id="return-change-button" class="btn btn-default btn-block">
+                                Return Change
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="home.js"></script>
+
+</body>
+
+</html>

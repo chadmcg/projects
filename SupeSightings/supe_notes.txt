@@ -1,0 +1,1 @@
+Lat/long truncating values? (e.g. -25.123456 is returned as 25.123456; -25.12345 would return the correct value). Also could not enter 1234.45 without crashing. (Demanding six decimal places?)

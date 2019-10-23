@@ -1,0 +1,15 @@
+com\mycompany\superherosightings\controllers\SupeController.class
+com\mycompany\superherosightings\App.class
+com\mycompany\superherosightings\daos\Dao.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl.class
+com\mycompany\superherosightings\models\Organization.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl$SupeMapper.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl$PowerMapper.class
+com\mycompany\superherosightings\models\Power.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl$SightingMapper.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl$LocationMapper.class
+com\mycompany\superherosightings\TestApplicationConfiguration.class
+com\mycompany\superherosightings\models\Supe.class
+com\mycompany\superherosightings\models\Location.class
+com\mycompany\superherosightings\daos\DaoDatabaseImpl$OrganizationMapper.class
+com\mycompany\superherosightings\models\Sighting.class
