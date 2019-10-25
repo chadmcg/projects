@@ -1,0 +1,18 @@
+<Item>
+   <Name>Hat</Name>
+   <Quantity>2</Quantity>
+   <SKU>102356</SKU>
+   <Price>10.25</Price>
+</Item>
+<Item>
+   <Name>Gloves</Name>
+   <Quantity>4</Quantity>
+   <SKU>857623</SKU>
+   <Price>5.75</Price>
+</Item>
+<Item>
+   <Name>Scarf</Name>
+   <Quantity>6</Quantity>
+   <SKU>976128</SKU>
+   <Price>6.00</Price>
+</Item>

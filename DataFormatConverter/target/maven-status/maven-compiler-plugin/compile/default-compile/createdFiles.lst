@@ -1,0 +1,6 @@
+com\mycompany\dataformatconverter\App.class
+com\mycompany\dataformatconverter\Controller.class
+com\mycompany\dataformatconverter\FileDaoException.class
+com\mycompany\dataformatconverter\Item.class
+com\mycompany\dataformatconverter\FileDao.class
+com\mycompany\dataformatconverter\View.class
