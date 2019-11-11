@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p></p>
+        <nav>
+            <div class="logo">
+                <h1><img src="Images/Logo1.jpg" height="100" width="100" />TheSurfSpot</h1>
+            </div>
+            <ul class="navLinks">
+                <li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="/admin">Admin</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/beaches">Beaches</a>
+                </li>
+                <li>
+                    <a href="/break">Breaks</a>
+                </li>
+                <div sec:authorize="!isAuthenticated()">
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                </div>
+            </ul>
+            <div sec:authorize="isAuthenticated()">
+                <form class="form-inline" 
+                      method="POST" 
+                      action="/logout">
+                    <input type="hidden" 
+                           th:name="${_csrf.parameterName}" 
+                           th:value="${_csrf.token}"/>
+                    <label for="submit">
+                        Hello,&nbsp; <span th:text="${#authentication.name}">
+                        </span>&nbsp;&nbsp;&nbsp;|
+                    </label>
+                    <button class="btn btn-link" 
+                            id="submit" 
+                            type="submit">Logout</button>
+                </form>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div>TODO write content</div>
+    </body>
+</html>

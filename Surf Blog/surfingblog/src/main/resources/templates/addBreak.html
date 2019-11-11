@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="css/Beach.css">
+        <script src="https://cdn.tiny.cloud/1/azjlp04whihefwj8d5yxyfvhs6cnowuxhcugt9bwqd35m2yv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#blog'
+            });
+        </script>
+
+
+        <title>SurfSpot</title>
+    </head>
+    <body>
+        <!-- Main Body of Page -->
+        <p></p>
+        <nav>
+            <div class="logo">
+                <h1><img src="Images/Logo1.jpg" height="100" width="100" />TheSurfSpot</h1>
+            </div>
+            <ul class="navLinks">
+                <li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="/admin">Admin</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/beaches">Beaches</a>
+                </li>
+                <li>
+                    <a href="/break">Breaks</a>
+                </li>
+                <div sec:authorize="!isAuthenticated()">
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                </div>
+            </ul>
+            <div sec:authorize="isAuthenticated()">
+                <form class="form-inline" 
+                      method="POST" 
+                      action="/logout">
+                    <input type="hidden" 
+                           th:name="${_csrf.parameterName}" 
+                           th:value="${_csrf.token}"/>
+                    <label for="submit">
+                        Hello,&nbsp; <span th:text="${#authentication.name}">
+                        </span>&nbsp;&nbsp;&nbsp;|
+                    </label>
+                    <button class="btn btn-link" 
+                            id="submit" 
+                            type="submit">Logout</button>
+                </form>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <br>
+
+        <div class="row m-4 border border-dark">
+            <div class="col-12 m-1 text-center" 
+                 th:if="${!errors.isEmpty()}">
+                <p class="alert alert-danger" th:each="error : ${errors}" 
+                   th:text="${error.message}">Error message</p>
+            </div>
+            <div class="col-3 text-center m-3">
+                <span class="h3">Add Break</span>
+            </div>
+            <div class="col-7 text-center m-3">
+                <form action="addBreak" method="POST">
+                    <input type="hidden" 
+                           th:name="${_csrf.parameterName}" 
+                           th:value="${_csrf.token}"/>
+                    <div class="form-group row">
+                        <label for="name" class="col-3 col-form-label">
+                            Name</label>
+                        <div class="col-9">
+                            <input type="text" name="name" 
+                                   id="name" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="beach" class="col-3 col-form-label">
+                            Beach</label>
+                        <div class="col-9">
+                            <select id="beach" name="beachId" class="form-control" >
+                                <option th:each="beach : ${beaches}" 
+                                        th:value="${beach.id}" 
+                                        th:text="${beach.name}">
+                                    Beach Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="latitude" class="col-3 col-form-label">
+                            Latitude</label>
+                        <div class="col-9">
+                            <input type="number" step="0.000001" min="-90.000000" max="90.000000" name="latitude" id="latitude" 
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="longitude" class="col-3 col-form-label">
+                            Longitude</label>
+                        <div class="col-9">
+                            <input type="number" step="0.000001" min="-180.000000" max="180.000000" name="longitude" id="longitude" 
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="blog" class="col-3 col-form-label">
+                            Blog</label>
+                        <div class="col-9">
+                            <input type="text" name="blog" 
+                                   id="blog" class="form-control"/>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Beach Break</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- End main body -->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--        <script th:inline="javascript">
+                    var map;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: -34.397, lng: 150.644},
+                            zoom: 8
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAspsZdPfCpFU26I_TYDy2JnvHx7e3ZGwE&callback=initMap"
+                async defer></script>-->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="/break.js"></script>
+    </body>
+</html>;
+

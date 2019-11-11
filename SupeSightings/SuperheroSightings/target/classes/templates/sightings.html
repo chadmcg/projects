@@ -1,0 +1,141 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Supe Sightings - Sightings</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--Header-->
+        <div class="container">
+            <div class="row m-4">
+                <div class="col text-center border border-dark">
+                    <span style="float:left">
+                        <a class="btn badge-pill" href="home">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+                        </a>
+                    </span>
+                    <h1>Sightings</h1>
+                </div>
+            </div>
+
+            <!--Buttons to navigate between pages-->
+            <div class="row m-4 border border-dark">
+                <div class="col text-center m-3">
+                    <a href="supes" class="btn btn-outline-primary btn-lg">Supes</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="superpowers" class="btn btn-outline-primary btn-lg">Powers</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="locations" class="btn btn-outline-primary btn-lg">Locations</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="organizations" class="btn btn-outline-primary btn-lg">Organizations</a>
+                </div>
+                <div class="col text-center m-3">
+                    <a href="sightings" class="btn btn-outline-primary btn-lg">Sightings</a>
+                </div>
+            </div>
+
+            <!--Form for adding a new sighting -->
+
+            <div class="col-12 m-1 text-center" 
+                 th:if="${!errors.isEmpty()}">
+                <p class="alert alert-danger" th:each="error : ${errors}" 
+                   th:text="${error.message}">Error message</p>
+            </div>
+            <div class="col-12 m-1 text-center" 
+                 th:if="${!daoErrors.isEmpty()}">
+                <p class="alert alert-danger" th:each="daoError : ${daoErrors}" 
+                   th:text="${daoError}">Error message</p>
+            </div>
+            <div class="col-12 m-1 text-center" 
+                 th:if="${!moreErrors.isEmpty()}">
+                <p class="alert alert-danger" th:each="error : ${moreErrors}" 
+                   th:text="${error}">Error message</p>
+            </div>
+
+            <div class="row m-4 border border-dark">
+                <div class="col-3 text-center m-3">
+                    <span class="h3">Add Sighting</span>
+                </div>
+                <div class="col-7 text-center m-3">
+                    <form action="addSighting" method="POST">
+                        <div class="form-group row">
+                            <label for="date" class="col-3 col-form-label">
+                                Sighting Date</label>
+                            <div class="col-9">
+                                <input type="date" name="date" 
+                                       id="date" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="location" class="col-3 col-form-label">
+                                Sighting Location</label>
+                            <div class="col-9">
+                                <select id="location" name="locationId" class="form-control" >
+                                    <option>Please select a location</option>
+                                    <option th:each="location : ${allLocations}" 
+                                            th:value="${location.id}" 
+                                            th:text="${location.name + ' / ' + location.address}">
+                                        Sighting Location</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="supe" class="col-3 col-form-label">
+                                Supe Sighted</label>
+                            <div class="col-9">
+                                <select id="supe" name="supeId" class="form-control" >
+                                    <option>Please select a supe</option>
+                                    <option th:each="supe : ${allSupes}" 
+                                            th:value="${supe.id}" 
+                                            th:text="${supe.name}">
+                                        Supe</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Sighting</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--Table for displaying all sightings -->
+            <div class="row m-4 border border-dark">
+                <div class="col text-center m-3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Supe</th>
+                                <th>Location Name</th>
+                                <th>Location Address</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="sighting : ${allSightings}">
+                                <td th:text="${sighting.date}">Date</td>
+                                <td th:text="${sighting.sightedSupe.name}">Supe</td>
+                                <td th:text="${sighting.sightingLocation.name}">Location Name</td>
+                                <td th:text="${sighting.sightingLocation.address}">Location Address</td>
+                                <td><small><a href="#" th:href="@{/deleteSighting(id=${sighting.id})}">Delete</a></small></td>
+                                <td><small><a href="#" th:href="@{/editSighting(id=${sighting.id})}">Edit</a></small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
